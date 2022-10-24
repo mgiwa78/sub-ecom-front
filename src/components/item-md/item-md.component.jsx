@@ -1,31 +1,20 @@
-import React from "react";
-import { ItemMdContainer } from "./item-md.styles";
+import { AddBtn, ItemMdContainer } from "./item-md.styles";
+import { useDispatch, useSelector } from "react-redux";
+import { AddToCartAction } from "../../store/cart/cart-actions";
+import { SelectCartItems } from "../../store/cart/cart-selector";
 
-import jacketImg1 from "../../assets/images/products/jacket-3.jpg";
-import watchImg2 from "../../assets/images/products/watch-1.jpg";
-import shoeImg from "../../assets/images/products/shoe-1.jpg";
-import clothImg from "../../assets/images/products/clothes-1.jpg";
-import hatImg from "../../assets/images/products/1.jpg";
-import sportsImg from "../../assets/images/products/sports-1.jpg";
-import watch2Img from "../../assets/images/products/watch-1.jpg";
-import shapooImg from "../../assets/images/products/shampoo.jpg";
+const ItemMd = ({ item }) => {
+  const dispatch = useDispatch();
+  const cartItems = useSelector(SelectCartItems);
 
-const ItemMd = ({ num }) => {
-  const itemImages = {
-    1: jacketImg1,
-    2: hatImg,
-    3: shoeImg,
-    4: clothImg,
-    5: watchImg2,
-    6: sportsImg,
-    7: watch2Img,
-    8: shapooImg,
+  const handleAddToCart = (item) => {
+    dispatch(AddToCartAction(item, cartItems));
   };
   return (
     <ItemMdContainer>
       <div className="showcase-banner">
         <img
-          src={itemImages[num]}
+          src={item.img}
           alt="Mens Winter Leathers Jackets"
           width="300"
           className="product-img default"
@@ -52,7 +41,7 @@ const ItemMd = ({ num }) => {
         </div>
       </div>
       <a href="#" className="showcase-category">
-        shirt
+        {item.name}
       </a>
 
       <h3>
@@ -70,9 +59,10 @@ const ItemMd = ({ num }) => {
       </div>
 
       <div className="price-box">
-        <p className="price">₦2,145.00</p>
-        <del>₦5,656.00</del>
+        <p className="price">₦{item.price}</p>
+        {/* <del>₦5,656.00</del> */}
       </div>
+      <AddBtn onClick={() => handleAddToCart(item, cartItems)}>Buy Now</AddBtn>
     </ItemMdContainer>
   );
 };

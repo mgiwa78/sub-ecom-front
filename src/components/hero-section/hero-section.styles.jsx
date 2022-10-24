@@ -3,7 +3,6 @@ import styled, { css } from "styled-components/macro";
 export const HeroSlideContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
   .btn {
     background-color: hsl(353, 100%, 78%);
@@ -29,6 +28,7 @@ export const HeroSlide = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  text-align: left;
   padding: 0px 100px;
 
   border-radius: 10px;

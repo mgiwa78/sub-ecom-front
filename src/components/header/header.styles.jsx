@@ -1,4 +1,6 @@
 import styled from "styled-components/macro";
+import { ReactComponent as User } from "../../assets/images/icons/user-1.svg";
+import { ReactComponent as Cart } from "../../assets/images/icons/cart-1.svg";
 
 export const Headercontainer = styled.div`
   display: flex;
@@ -59,7 +61,6 @@ export const HeaderSearch = styled.a`
 export const HeaderActions = styled.div`
   display: flex;
   align-items: center;
-  gap: 15px;
 
   .action-btn {
     position: relative;
@@ -79,5 +80,41 @@ export const HeaderActions = styled.div`
     line-height: 1;
     padding: 2px 4px;
     border-radius: 20px;
+  }
+`;
+
+export const CartContainer = styled.div`
+  position: relative;
+
+  .cart-num {
+    position: absolute;
+    top: -10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
+    right: -8px;
+    font-size: 13px;
+    background-color: hsl(0, 0%, 100%);
+    color: #000;
+    padding: 5px;
+    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+  }
+`;
+export const UserIcon = styled(User)``;
+export const CartIcon = styled(Cart)``;
+export const ActionsContianer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(353, 100%, 78%);
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50px;
+  &.user {
+    margin-right: 20px;
   }
 `;

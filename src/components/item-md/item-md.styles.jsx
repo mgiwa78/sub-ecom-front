@@ -6,6 +6,9 @@ export const ItemMdContainer = styled.div`
   border-radius: 10px;
   padding: 15px;
   position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
   margin-bottom: 15px;
 
   .showcase-title {
@@ -57,5 +60,23 @@ export const ItemMdContainer = styled.div`
     text-decoration: none;
     color: hsl(353, 100%, 78%);
     font-weight: 400;
+  }
+`;
+
+export const AddBtn = styled.div`
+  width: calc(50%);
+  border-radius: 5px;
+  padding: 4px 0;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  color: #000;
+  cursor: pointer;
+
+  &:hover {
+    background-color: hsl(353, 100%, 78%);
+    color: #fff;
   }
 `;

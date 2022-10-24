@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import { Navcontainer, NavItems } from "./nav.styles";
 
 const Nav = () => {
+  const Navigate = useNavigate();
   return (
     <Navcontainer className="desktop-menu-category-NavItemsst">
-      <NavItems className="menu-category">
+      <NavItems onClick={() => Navigate("/")} className="menu-category">
         <a href="#" className="menu-title">
           Home
         </a>
